@@ -1,8 +1,19 @@
-import React from 'react';
+import React from "react";
 
 function App() {
-  const value = 'World';
-  return <div>Hello {value}</div>;
+  const [count, setCount] = React.useState(() => 0);
+
+  const handleClick = () => {
+    setTimeout(() => setCount((curCount) => curCount + 1), 500);
+  };
+
+  return (
+    <>
+      Current count: {count}
+      <br />
+      <button onClick={handleClick}>Increment</button>
+    </>
+  );
 }
 
 export default App;
